@@ -1,6 +1,8 @@
 package fr.ecole3il.rodez2023.perlin.math;
 
 
+import fr.ecole3il.rodez2023.perlin.Utils;
+
 /**
  * @author philibert roquart, fainéant
  */
@@ -28,7 +30,7 @@ public class BruitPerlin2D extends Bruit2D {
 
 	public BruitPerlin2D(long graine, double resolution) {
 		super(graine, resolution);
-		this.permutation = PERMUTATION;
+		this.permutation = Utils.melanger(PERMUTATION, graine);
 	}
 
 	@Override
@@ -37,6 +39,7 @@ public class BruitPerlin2D extends Bruit2D {
 		int x0, y0, ii, jj, gi0, gi1, gi2, gi3;
 		double unit = 1.0f / (double) Math.sqrt(2);
 		double tmp, s, t, u, v, Cx, Cy, Li1, Li2;
+		double resolution = 1;
 		// Adapter pour la résolution
 		x /= resolution;
 		y /= resolution;
