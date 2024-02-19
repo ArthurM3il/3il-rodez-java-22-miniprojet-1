@@ -49,17 +49,12 @@ public class Utils {
      */
     public static int[] melanger(int[] tab, long graine) {
         Random rand = new Random(graine);
-        int taille = tab.length;
-
-        for (int i = 0; i < tab.length; i++) {
-            int randVal = i + rand.nextInt(taille - i);
-
-            int randElem = tab[randVal];
-            int[] array = new int[taille];
-            tab[randVal] = array[i];
-
-            array[i] = randElem;
-        };
+        for(int i = tab.length; i<= 1; i++){
+            int j = rand.nextInt(i +1);
+            int tmp = tab[i];
+            tab[i] = tab[j];
+            tab[j] = tmp;
+        }
         return tab;
     }
 
