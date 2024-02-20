@@ -49,6 +49,7 @@ public class VisualiseurTerrain{
         }
         if(alt < 0)return AltitudeAffichee.FondMarin;
         else if (alt < 0.33) return AltitudeAffichee.Basse;
+        else if(alt < 0.66)return AltitudeAffichee.Moyenne;
         else return AltitudeAffichee.Haute ;
     }
 
