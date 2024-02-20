@@ -1,6 +1,7 @@
 package fr.ecole3il.rodez2023.perlin.terrain.elements;
 
 import fr.ecole3il.rodez2023.perlin.terrain.MauvaiseValeurException;
+import fr.ecole3il.rodez2023.perlin.terrain.visualisation.DetermineurTerrain;
 
 public class Terrain {
     private double altitude;
@@ -28,5 +29,9 @@ public class Terrain {
 
     public double getTemperature() {
         return temperature;
+    }
+
+    public TypeTerrain getTypeTerrain(DetermineurTerrain dt){
+        return dt.determinerTerrain(this.altitude, this.hydrometrie, this.temperature);
     }
 }
