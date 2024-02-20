@@ -21,6 +21,7 @@ import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
+import fr.ecole3il.rodez2023.perlin.terrain.MauvaiseValeurException;
 import fr.ecole3il.rodez2023.perlin.terrain.carte.Carte;
 import fr.ecole3il.rodez2023.perlin.terrain.carte.ManipulateurCarte;
 import fr.ecole3il.rodez2023.perlin.terrain.concrets.VisualiseurTerrainEnonce;
@@ -172,8 +173,12 @@ public class VisualiseurCarteTerrain extends JFrame {
 		genererItem.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				genererCarteDialogue();
-			}
+                try {
+                    genererCarteDialogue();
+                } catch (MauvaiseValeurException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
 		});
 
 		menu.add(chargerItem);
@@ -186,7 +191,7 @@ public class VisualiseurCarteTerrain extends JFrame {
         add(terrainLabel, BorderLayout.SOUTH); // Ajout du label en bas de la fenêtre
 	}
 
-	private void genererCarteDialogue() {
+	private void genererCarteDialogue() throws MauvaiseValeurException {
 		JTextField largeurField = new JTextField(5);
 		JTextField hauteurField = new JTextField(5);
 		JTextField graineAlea = new JTextField(5);
