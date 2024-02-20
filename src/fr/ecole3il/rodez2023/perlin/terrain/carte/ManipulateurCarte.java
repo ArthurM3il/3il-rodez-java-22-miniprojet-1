@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import fr.ecole3il.rodez2023.perlin.Utils;
+import fr.ecole3il.rodez2023.perlin.terrain.TerrainInexistantException;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
 
 /**
@@ -45,7 +46,7 @@ public class ManipulateurCarte {
                     writer.write(terrain.getTemperature() + "\n");
                 }
             }
-        } catch (IOException e) {
+        } catch (IOException | TerrainInexistantException e) {
             e.printStackTrace();
         }
     }
