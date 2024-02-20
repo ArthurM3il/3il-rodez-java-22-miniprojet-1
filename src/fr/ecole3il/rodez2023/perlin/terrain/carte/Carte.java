@@ -33,4 +33,11 @@ public class Carte {
         this.hauteur = hauteur;
         this.carte = generateurCarte.genererCarte(this.largeur, this.hauteur);
     }
+
+    public Carte(String donneeCarte) {
+        String[] donnee = donneeCarte.split("\n");
+        this.nom = donnee[0];
+        this.largeur = Integer.parseInt(donnee[1]);
+        this.hauteur = Integer.parseInt(donnee[2]);
+    }
 }
