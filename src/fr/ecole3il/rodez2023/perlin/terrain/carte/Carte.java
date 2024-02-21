@@ -35,7 +35,7 @@ public class Carte {
         this.carte = generateurCarte.genererCarte(this.largeur, this.hauteur);
     }
 
-    public Carte(String donneeCarte) {
+    public Carte(String donneeCarte) throws MauvaiseValeurException {
         String[] donnee = donneeCarte.split("\n");
         this.nom = donnee[0];
         this.largeur = Integer.parseInt(donnee[1]);

@@ -143,9 +143,13 @@ public class VisualiseurCarteTerrain extends JFrame {
 		            String cheminFichier = fichierSelectionne.getAbsolutePath();
 
 		            // Charger la carte à partir du fichier sélectionné
-		            carte = ManipulateurCarte.chargerCarte(cheminFichier);
+                    try {
+                        carte = ManipulateurCarte.chargerCarte(cheminFichier);
+                    } catch (MauvaiseValeurException ex) {
+                        throw new RuntimeException(ex);
+                    }
 
-		            // Repaint ou rafraîchir l'affichage
+                    // Repaint ou rafraîchir l'affichage
 		            repaint();
 		        }
 		    }

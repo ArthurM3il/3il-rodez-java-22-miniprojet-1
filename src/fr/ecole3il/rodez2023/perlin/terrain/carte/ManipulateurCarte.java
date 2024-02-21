@@ -5,6 +5,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 import fr.ecole3il.rodez2023.perlin.Utils;
+import fr.ecole3il.rodez2023.perlin.terrain.MauvaiseValeurException;
 import fr.ecole3il.rodez2023.perlin.terrain.TerrainInexistantException;
 import fr.ecole3il.rodez2023.perlin.terrain.elements.Terrain;
 
@@ -21,7 +22,7 @@ public class ManipulateurCarte {
      * @param cheminFichier Le chemin vers le fichier contenant les données de la carte.
      * @return Une instance de Carte chargée à partir du fichier.
      */
-    public static Carte chargerCarte(String cheminFichier) {
+    public static Carte chargerCarte(String cheminFichier) throws MauvaiseValeurException {
         return new Carte(Utils.lireContenuFichier(cheminFichier));
     }
     
