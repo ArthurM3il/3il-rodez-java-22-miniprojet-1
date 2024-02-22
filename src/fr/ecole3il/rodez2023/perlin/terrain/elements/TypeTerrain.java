@@ -24,7 +24,10 @@ public enum TypeTerrain{
     }
 
 
-
+    /**
+     * Override de toString retournant le nom de l'enum moins l'extension
+     * @return
+     */
     @Override
     public String toString(){
         return nom.substring(0, nom.length() - 4);

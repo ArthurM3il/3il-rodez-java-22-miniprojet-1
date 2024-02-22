@@ -13,6 +13,12 @@ public class VisualiseurTerrain{
         this.carte = carte;
     }
 
+    /**
+     * Méthode de récupération et de controle de l'hydrométrie
+     * @param x
+     * @param y
+     * @return
+     */
     public HydrometrieAffichee getHydrometrieAffichee(int x, int y) {
         double hydro;
         try {

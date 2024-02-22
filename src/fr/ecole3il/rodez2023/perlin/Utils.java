@@ -44,8 +44,6 @@ public class Utils {
      * @param tab Le tableau à mélanger.
      * @param graine La graine utilisée pour le mélange.
      * @return Un nouveau tableau contenant les éléments mélangés.
-     * 
-     * @author Arthur MORENO
      */
     public static int[] melanger(int[] tab, long graine) {
         Random rand = new Random(graine);
@@ -63,8 +61,6 @@ public class Utils {
      * @param width Le premier nombre.
      * @param height Le deuxième nombre.
      * @return Le plus petit des deux nombres.
-     * 
-     * @author Arthur MORENO
      */
     public static double min(int width, int height) {
     	return width<height ? width : height;

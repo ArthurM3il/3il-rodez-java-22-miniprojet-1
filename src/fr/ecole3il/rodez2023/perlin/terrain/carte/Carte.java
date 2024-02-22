@@ -28,6 +28,14 @@ public class Carte {
         return nom;
     }
 
+    /**
+     * Méthode permettant de generer la carte
+     * @param nom
+     * @param largeur
+     * @param hauteur
+     * @param generateurCarte
+     * @throws MauvaiseValeurException
+     */
     public Carte(String nom, int largeur, int hauteur, GenerateurCarte generateurCarte) throws MauvaiseValeurException {
         this.nom = nom;
         this.largeur = largeur;
@@ -35,12 +43,16 @@ public class Carte {
         this.carte = generateurCarte.genererCarte(this.largeur, this.hauteur);
     }
 
+    /**
+     * Méthode permettant de générer la carte à partir d'une chaine de caractère
+     * @param donneeCarte
+     * @throws MauvaiseValeurException
+     */
     public Carte(String donneeCarte) throws MauvaiseValeurException {
         String[] donnee = donneeCarte.split("\n");
         this.nom = donnee[0];
         this.largeur = Integer.parseInt(donnee[1]);
         this.hauteur = Integer.parseInt(donnee[2]);
 
-        //this.carte = new Terrain(Double.parseDouble(donnee[3].substring(0,3)),Double.parseDouble(donnee[3].substring(3,6)),Double.parseDouble(donnee[3].substring(6,9)));
     }
 }
